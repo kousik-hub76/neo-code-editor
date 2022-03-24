@@ -1,0 +1,33 @@
+.header {
+  font-size: 30px;
+  /* margin-left: 10px; */
+  font-weight: 600;
+  background: rgb(19, 18, 18);
+  color: #fff;
+}
+span {
+  margin: 10px 10px;
+}
+.home {
+  display: flex;
+}
+.html-div,
+.css-div,
+.js-div {
+  margin: 0px 0px 0px 10px;
+}
+.output-div {
+  margin: 10px 10px;
+}
+
+#html-code,
+#css-code,
+#js-code {
+  width: 430px;
+  height: 200px;
+}
+#output {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+}

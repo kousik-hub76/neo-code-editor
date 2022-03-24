@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="editor">
+      <div class="header"><span>Neo code editor</span></div>
+      <div class="home">
+        <div class="html-div">
+          <h2>HTML</h2>
+          <textarea id="html-code"></textarea>
+        </div>
+
+        <div class="css-div">
+          <h2>CSS</h2>
+          <textarea id="css-code"></textarea>
+        </div>
+
+        <div class="js-div">
+          <h2>JS</h2>
+          <textarea id="js-code"></textarea>
+        </div>
+      </div>
+      <div class="output-div">
+        <iframe id="output"></iframe>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      function run() {
+        let htmlCode = document.querySelector(".editor #html-code").value;
+        let cssCode =
+          "<style>" + document.querySelector(".editor #css-code").value;
+        +"</style>";
+        let jsCode = document.querySelector(".editor #js-code").value;
+        let output = document.querySelector(".editor #output");
+        // console.log(htmlCode, cssCode, jsCode, output);
+        output.contentDocument.body.innerHTML = htmlCode + cssCode;
+        output.contentWindow.eval(jsCode);
+      }
+      document
+        .querySelector(".editor #html-code")
+        .addEventListener("keyup", run);
+      document
+        .querySelector(".editor #css-code")
+        .addEventListener("keyup", run);
+      document.querySelector(".editor #js-code").addEventListener("keyup", run);
+    </script>
+  </body>
+</html>
